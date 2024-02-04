@@ -13,9 +13,15 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     accountAddress = message.interactor.verified_accounts[0];
   }
 
+  if (message?.input) {
+    text = message.input;
+  }
+
   if (message?.button === 2) {
-    const text = message.input ?? 'rick roll';
-    return NextResponse.redirect(`https://www.google.com/search?q=${text}`, { status: 302 });
+    return NextResponse.redirect(
+      `https://www.google.com/search?q=${text ?? "rick roll"}`,
+      { status: 302 },
+    );
   }
 
   return new NextResponse(
