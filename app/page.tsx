@@ -5,25 +5,25 @@ import { NEXT_PUBLIC_URL } from './config';
 const frameMetadata = getFrameMetadata({
   buttons: [
     {
-      label: 'Tell me the story',
+      label: 'Search Google',
     },
     {
-      label: 'Redirect to cute dog pictures',
+      label: 'Redirect to Google',
       action: 'post_redirect',
     },
   ],
   image: `${NEXT_PUBLIC_URL}/park-1.png`,
   input: {
-    text: 'Tell me a boat story',
+    text: 'Text',
   },
   post_url: `${NEXT_PUBLIC_URL}/api/frame`,
 });
 
 export const metadata: Metadata = {
-  title: 'zizzamia.xyz',
+  title: 'jan frame test',
   description: 'LFG',
   openGraph: {
-    title: 'zizzamia.xyz',
+    title: 'jan frame test',
     description: 'LFG',
     images: [`${NEXT_PUBLIC_URL}/park-1.png`],
   },
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <h1>zizzamia.xyz</h1>
+      <h1>Jan Test Frame</h1>
     </>
   );
 }
